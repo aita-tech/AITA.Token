@@ -1078,16 +1078,244 @@ section {
     }
 }
 
-@media (max-width: 480px) {
+/* Mobile Navigation Styles */
+.mobile-nav-toggle {
+    display: none;
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    z-index: 1001;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-toggle:hover {
+    background: rgba(40, 199, 111, 0.1);
+    border-color: var(--primary-color);
+}
+
+.hamburger-line {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--text-light);
+    margin: 4px 0;
+    transition: all 0.3s ease;
+    border-radius: 1px;
+}
+
+.mobile-nav-toggle.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-nav-toggle.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-nav-toggle.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--bg-dark);
+    backdrop-filter: blur(20px);
+    border-left: 1px solid var(--glass-border);
+    z-index: 1000;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+}
+
+.mobile-nav.active {
+    right: 0;
+}
+
+.mobile-nav-content {
+    padding: 2rem 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-nav-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.mobile-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+}
+
+.mobile-logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+.mobile-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+
+.mobile-nav-list li {
+    margin-bottom: 0.5rem;
+}
+
+.mobile-nav-link {
+    display: block;
+    padding: 1rem 1.2rem;
+    color: var(--text-gray);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+    color: var(--text-light);
+    background: rgba(40, 199, 111, 0.1);
+    border-left: 3px solid var(--primary-color);
+}
+
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 1024px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+    
     .side-nav {
         display: none;
     }
+}
 
+@media (max-width: 768px) {
+    .mobile-nav-toggle {
+        display: block;
+    }
+    
+    .side-nav {
+        display: none;
+    }
+    
+    .mobile-nav {
+        width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mobile-nav-toggle {
+        top: 1rem;
+        right: 1rem;
+        padding: 0.6rem;
+    }
+    
+    .hamburger-line {
+        width: 18px;
+        height: 2px;
+        margin: 3px 0;
+    }
+    
+    .mobile-nav {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .mobile-nav-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    .mobile-nav-header {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+    }
+    
+    .mobile-logo {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .mobile-logo-text {
+        font-size: 1.1rem;
+    }
+    
+    .mobile-nav-link {
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+    }
+}
+
+/* Additional mobile improvements */
+@media (max-width: 768px) {
     .logo-container {
         top: 1rem;
         left: 1rem;
         padding: 0.5rem 0.8rem;
     }
+    
+    .logo {
+        height: 24px;
+    }
+    
+    .logo-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+    .mobile-nav-toggle {
+        padding: 1rem;
+    }
+    
+    .mobile-nav-link {
+        padding: 1.2rem 1.2rem;
+        font-size: 1rem;
+    }
+    
+    .hamburger-line {
+        width: 22px;
+        height: 3px;
+        margin: 5px 0;
+    }
+}
 
     .logo {
         height: 28px;

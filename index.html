@@ -23,21 +23,21 @@
                 <span class="nav-dot"></span>
                 <span class="nav-label">Home</span>
             </a></li>
-            <li><a href="#how-it-works" class="nav-link" data-section="how-it-works">
+            <li><a href="#projects" class="nav-link" data-section="projects">
                 <span class="nav-dot"></span>
-                <span class="nav-label">How It Works</span>
+                <span class="nav-label">Projects</span>
             </a></li>
             <li><a href="#about-aita" class="nav-link" data-section="about-aita">
                 <span class="nav-dot"></span>
                 <span class="nav-label">About</span>
             </a></li>
+            <li><a href="#how-it-works" class="nav-link" data-section="how-it-works">
+                <span class="nav-dot"></span>
+                <span class="nav-label">How It Works</span>
+            </a></li>
             <li><a href="#benefits" class="nav-link" data-section="benefits">
                 <span class="nav-dot"></span>
                 <span class="nav-label">Benefits</span>
-            </a></li>
-            <li><a href="#projects" class="nav-link" data-section="projects">
-                <span class="nav-dot"></span>
-                <span class="nav-label">Projects</span>
             </a></li>
             <li><a href="#project-snapshot" class="nav-link" data-section="project-snapshot">
                 <span class="nav-dot"></span>
@@ -49,10 +49,40 @@
             </a></li>
             <li><a href="#contact" class="nav-link" data-section="contact">
                 <span class="nav-dot"></span>
-                <span class="nav-label">Contact</span>
+                <span class="nav-label">Join Wait List</span>
             </a></li>
 </ul>
     </nav>
+
+    <!-- Mobile Navigation Toggle -->
+    <button class="mobile-nav-toggle" aria-label="Toggle navigation">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+    </button>
+
+    <!-- Mobile Navigation Menu -->
+    <nav class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-content">
+            <div class="mobile-nav-header">
+                <img src="Untitled-8.png" alt="AITA token" class="mobile-logo">
+                <span class="mobile-logo-text">AITA token</span>
+            </div>
+            <ul class="mobile-nav-list">
+                <li><a href="#hero" class="mobile-nav-link" data-section="hero">Home</a></li>
+                <li><a href="#projects" class="mobile-nav-link" data-section="projects">Projects</a></li>
+                <li><a href="#about-aita" class="mobile-nav-link" data-section="about-aita">About</a></li>
+                <li><a href="#how-it-works" class="mobile-nav-link" data-section="how-it-works">How It Works</a></li>
+                <li><a href="#benefits" class="mobile-nav-link" data-section="benefits">Benefits</a></li>
+                <li><a href="#project-snapshot" class="mobile-nav-link" data-section="project-snapshot">Project</a></li>
+                <li><a href="#team" class="mobile-nav-link" data-section="team">Team</a></li>
+                <li><a href="#contact" class="mobile-nav-link" data-section="contact">Join Wait List</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
 
     <!-- Logo -->
     <div class="logo-container">
@@ -464,11 +494,11 @@
         </div>
     </section>
 
-    <!-- Contact Form Section -->
+    <!-- Join Wait List Section -->
     <section class="contact" id="contact">
         <div class="container">
-            <h2>Want to receive the full model and detailed projections?</h2>
-            <p>Leave your email and we'll send you a complete PDF overview.</p>
+            <h2>Join the Wait List</h2>
+            <p>Be the first to know when AITA tokens become available for investment.</p>
             <form class="contact-form" action="https://formspree.io/f/mnnpgajv" method="POST">
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Name" required>
@@ -476,7 +506,7 @@
                 <div class="form-group">
                     <input type="email" name="email" placeholder="Email" required>
                 </div>
-                <button type="submit">Send me the overview</button>
+                <button type="submit">Join Wait List</button>
             </form>
         </div>
     </section>
@@ -486,8 +516,9 @@
         // Update active nav link based on scroll position
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-link');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-        window.addEventListener('scroll', () => {
+        function updateActiveNavLink() {
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
@@ -497,15 +528,71 @@
                 }
             });
 
+            // Update desktop navigation
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('data-section') === current) {
                     link.classList.add('active');
                 }
             });
+
+            // Update mobile navigation
+            mobileNavLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-section') === current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNavLink);
+
+        // Mobile Navigation Toggle
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+        const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
+
+        function toggleMobileNav() {
+            mobileNavToggle.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+            mobileNavOverlay.classList.toggle('active');
+            document.body.classList.toggle('nav-open');
+        }
+
+        function closeMobileNav() {
+            mobileNavToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+            mobileNavOverlay.classList.remove('active');
+            document.body.classList.remove('nav-open');
+        }
+
+        // Event listeners for mobile navigation
+        mobileNavToggle.addEventListener('click', toggleMobileNav);
+        mobileNavOverlay.addEventListener('click', closeMobileNav);
+
+        // Close mobile nav when clicking on a link
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileNav();
+            });
         });
 
-        // Partner logos no longer need horizontal scrolling
+        // Close mobile nav on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+                closeMobileNav();
+            }
+        });
+
+        // Prevent body scroll when mobile nav is open
+        document.body.style.overflow = 'auto';
+        const style = document.createElement('style');
+        style.textContent = `
+            body.nav-open {
+                overflow: hidden;
+            }
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
