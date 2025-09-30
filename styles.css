@@ -447,6 +447,36 @@ section h2::after {
     display: none;
 }
 
+/* Visual feedback while dragging */
+.partner-logos.is-dragging {
+    cursor: grabbing;
+    scroll-behavior: auto;
+}
+
+/* Subtle scroll hint for desktop */
+@media (min-width: 769px) {
+    .partner-logos {
+        position: relative;
+    }
+    
+    .partner-logos::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 30px;
+        background: linear-gradient(90deg, transparent, var(--bg-dark));
+        pointer-events: none;
+        opacity: 0.6;
+        transition: opacity 0.3s ease;
+    }
+    
+    .partner-logos:hover::after {
+        opacity: 0.3;
+    }
+}
+
 .partner-logo {
     display: flex;
     flex-direction: column;
@@ -485,6 +515,14 @@ section h2::after {
     filter: none;
     border-radius: 50%;
     transition: transform 0.3s ease;
+}
+
+/* Helper for extra-wide wordmark logos inside circle */
+.partner-logo img.logo--wide {
+    width: 120%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0;
 }
 
 .partner-logo:hover img {
