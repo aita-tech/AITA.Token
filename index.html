@@ -84,6 +84,11 @@
     <!-- Mobile Navigation Overlay -->
     <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
 
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+        ↑
+    </button>
+
     <!-- Logo -->
     <div class="logo-container">
         <img src="Untitled-8.png" alt="AITA token" class="logo">
@@ -593,6 +598,30 @@
             }
         `;
         document.head.appendChild(style);
+
+        // Scroll to Top Button functionality
+        const scrollToTopButton = document.getElementById('scroll-to-top');
+        
+        // Show/hide scroll to top button based on scroll position
+        function toggleScrollToTopButton() {
+            if (window.pageYOffset > 300) {
+                scrollToTopButton.classList.add('visible');
+            } else {
+                scrollToTopButton.classList.remove('visible');
+            }
+        }
+        
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Event listeners
+        window.addEventListener('scroll', toggleScrollToTopButton);
+        scrollToTopButton.addEventListener('click', scrollToTop);
     </script>
 </body>
 </html>

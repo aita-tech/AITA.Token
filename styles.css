@@ -1512,3 +1512,78 @@ html {
     0%, 100% { transform: translateX(0); }
     50% { transform: translateX(6px); }
 }
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    color: var(--text-light);
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(40, 199, 111, 0.3);
+}
+
+.scroll-to-top:hover {
+    background: #23b35f;
+    border-color: #23b35f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(40, 199, 111, 0.4);
+}
+
+.scroll-to-top {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Inter', sans-serif;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-2px);
+}
+
+.scroll-to-top.visible {
+    display: flex;
+    animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile specific positioning */
+@media (max-width: 768px) {
+    .scroll-to-top {
+        bottom: 1.5rem;
+        left: 1.5rem;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scroll-to-top {
+        bottom: 1rem;
+        left: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
