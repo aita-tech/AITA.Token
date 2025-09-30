@@ -62,7 +62,7 @@ section:not(:first-child)::before {
 }
 
 section h2 {
-    text-align: center;
+    text-align: left;
     font-size: 2.8rem;
     margin-bottom: 3rem;
     background: linear-gradient(135deg, var(--text-light) 30%, var(--primary-color));
@@ -70,17 +70,17 @@ section h2 {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     position: relative;
-    display: inline-block;
-    left: 50%;
-    transform: translateX(-50%);
+    display: block;
+    max-width: 50%;
+    margin-left: 0;
+    margin-right: auto;
 }
 
 section h2::after {
     content: '';
     position: absolute;
     bottom: -1rem;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
     width: 60px;
     height: 3px;
     background: var(--primary-color);
@@ -163,15 +163,16 @@ section h2::after {
 .flow-title {
     font-size: 1.4rem;
     color: var(--primary-color);
-    text-align: center;
+    text-align: left;
     padding: 0.5rem 2rem;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     border-bottom: 2px solid var(--primary-color);
     width: fit-content;
-    margin: 0 auto;
+    margin: 0;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    display: block;
 }
 
 .flow {
@@ -434,10 +435,10 @@ section h2::after {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
     margin-top: 2rem;
-    flex-wrap: nowrap;
-    overflow-x: auto;
+    flex-wrap: wrap;
+    overflow-x: visible;
     padding: 1rem 0;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -447,33 +448,12 @@ section h2::after {
     display: none;
 }
 
-/* Visual feedback while dragging */
-.partner-logos.is-dragging {
-    cursor: grabbing;
-    scroll-behavior: auto;
-}
+/* Removed dragging functionality */
 
-/* Subtle scroll hint for desktop */
+/* Desktop layout adjustments */
 @media (min-width: 769px) {
     .partner-logos {
-        position: relative;
-    }
-    
-    .partner-logos::after {
-        content: '';
-        position: absolute;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        width: 30px;
-        background: linear-gradient(90deg, transparent, var(--bg-dark));
-        pointer-events: none;
-        opacity: 0.6;
-        transition: opacity 0.3s ease;
-    }
-    
-    .partner-logos:hover::after {
-        opacity: 0.3;
+        gap: 2.5rem;
     }
 }
 
@@ -482,7 +462,7 @@ section h2::after {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    min-width: 120px;
+    min-width: 110px;
     flex-shrink: 0;
 }
 
@@ -645,6 +625,7 @@ button:hover {
 
     section h2 {
         font-size: 2.3rem;
+        max-width: 60%;
     }
 
     section h2::after {
@@ -765,6 +746,7 @@ button:hover {
 
     section h2 {
         font-size: 2rem;
+        max-width: 70%;
     }
 
     section:not(:first-child)::before {

@@ -505,45 +505,7 @@
             });
         });
 
-        // Desktop scrolling for partners: drag and wheel-to-horizontal
-        (function enablePartnerScrolling() {
-            const logos = document.querySelector('.partner-logos');
-            if (!logos) return;
-
-            // Drag to scroll (mouse)
-            let isDown = false;
-            let startX = 0;
-            let startScrollLeft = 0;
-
-            logos.addEventListener('mousedown', (e) => {
-                isDown = true;
-                logos.classList.add('is-dragging');
-                startX = e.pageX - logos.offsetLeft;
-                startScrollLeft = logos.scrollLeft;
-            });
-            ['mouseleave', 'mouseup'].forEach((evt) => {
-                logos.addEventListener(evt, () => {
-                    isDown = false;
-                    logos.classList.remove('is-dragging');
-                });
-            });
-            logos.addEventListener('mousemove', (e) => {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = e.pageX - logos.offsetLeft;
-                const walk = (x - startX) * 1.2; // scroll speed multiplier
-                logos.scrollLeft = startScrollLeft - walk;
-            });
-
-            // Convert vertical wheel to horizontal when hovering the logos row
-            logos.addEventListener('wheel', (e) => {
-                // If vertical scroll is dominant, translate to horizontal
-                if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-                    e.preventDefault();
-                    logos.scrollLeft += e.deltaY;
-                }
-            }, { passive: false });
-        })();
+        // Partner logos no longer need horizontal scrolling
     </script>
 </body>
 </html>
