@@ -1,0 +1,45 @@
+
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+# Build output
+# Cache directories
+# Environment files
+# Files that might appear in the root of a volume
+# IDE - JetBrains
+# IDE - VSCode
+# Logs
+# Node
+# Thumbnails
+# macOS system files
+*.iml
+*.iws
+*.log
+.AppleDouble
+.DS_Store
+.DocumentRevisions-V100
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+._*
+.cache/
+.com.apple.timemachine.donotpresent
+.env
+.env.*.local
+.env.local
+.fseventsd
+.idea/
+.idea_modules/
+.temp/
+.tmp/ .DS_Store
+.vscode/*
+build/
+dist/
+node_modules/
+npm-debug.log
+out/
+yarn-debug.log
+yarn-error.log
