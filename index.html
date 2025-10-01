@@ -276,19 +276,19 @@
                     <div class="flow-title">Solar Project Developer</div>
                     <div class="flow">
                         <div class="flow-step">
-                            <div class="step-icon">👨‍💻</div>
+                            <div class="step-icon"><i data-lucide="user-round"></i></div>
                             <h3>Register on AITA Platform</h3>
                         </div>
                         <div class="flow-step">
-                            <div class="step-icon">📤</div>
+                            <div class="step-icon"><i data-lucide="upload"></i></div>
                             <h3>Upload Project</h3>
                         </div>
                         <div class="flow-step">
-                            <div class="step-icon">📋</div>
+                            <div class="step-icon"><i data-lucide="file-text"></i></div>
                             <h3>Create Investment Offer</h3>
                         </div>
                         <div class="flow-step">
-                            <div class="step-icon">🪙</div>
+                            <div class="step-icon"><i data-lucide="coins"></i></div>
                             <h3>Emit Token</h3>
                         </div>
                     </div>
@@ -299,19 +299,19 @@
                     <div class="flow-title">Token Investor</div>
                     <div class="flow">
                         <div class="flow-step">
-                            <div class="step-icon">👥</div>
+                            <div class="step-icon"><i data-lucide="users"></i></div>
                             <h3>Register on AITA Portal</h3>
                         </div>
                         <div class="flow-step">
-                            <div class="step-icon">✅</div>
+                            <div class="step-icon"><i data-lucide="shield-check"></i></div>
                             <h3>Pass KYC/AML</h3>
                         </div>
                         <div class="flow-step">
-                            <div class="step-icon">💰</div>
+                            <div class="step-icon"><i data-lucide="wallet"></i></div>
                             <h3>Deposit Fiat</h3>
                         </div>
                         <div class="flow-step">
-                            <div class="step-icon">🔄</div>
+                            <div class="step-icon"><i data-lucide="shopping-cart"></i></div>
                             <h3>Buy Token</h3>
                         </div>
                     </div>
@@ -322,19 +322,19 @@
                     <div class="flow-title">Project Lifecycle</div>
                     <div class="flow">
                         <div class="flow-step">
-                            <div class="step-icon">🏗️</div>
+                            <div class="step-icon"><i data-lucide="hammer"></i></div>
                             <h3>Finalize Solar Plant</h3>
                         </div>
                         <div class="flow-step">
-                            <div class="step-icon">⚡</div>
+                            <div class="step-icon"><i data-lucide="zap"></i></div>
                             <h3>Sell Electricity</h3>
                         </div>
                         <div class="flow-step">
-                            <div class="step-icon">💸</div>
+                            <div class="step-icon"><i data-lucide="circle-dollar-sign"></i></div>
                             <h3>Receive Payment</h3>
                         </div>
                         <div class="flow-step">
-                            <div class="step-icon">📈</div>
+                            <div class="step-icon"><i data-lucide="trending-up"></i></div>
                             <h3>Distribute Income</h3>
                         </div>
                     </div>
@@ -349,23 +349,23 @@
             <h2>Benefits</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon">💰</div>
+                    <div class="benefit-icon"><i data-lucide="coins"></i></div>
                     <h3>Access to infrastructure profits</h3>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">🏛️</div>
+                    <div class="benefit-icon"><i data-lucide="landmark"></i></div>
                     <h3>Regulated EU-based fund</h3>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">🌱</div>
+                    <div class="benefit-icon"><i data-lucide="leaf"></i></div>
                     <h3>Real environmental impact</h3>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">🏗️</div>
+                    <div class="benefit-icon"><i data-lucide="building-2"></i></div>
                     <h3>Real asset ownership</h3>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">📊</div>
+                    <div class="benefit-icon"><i data-lucide="bar-chart-3"></i></div>
                     <h3>Transparent digital reporting</h3>
                 </div>
             </div>
@@ -582,6 +582,70 @@
         // Event listeners
         window.addEventListener('scroll', toggleScrollToTopButton);
         scrollToTopButton.addEventListener('click', scrollToTop);
+
+        // Smooth form transition when Learn More buttons are clicked
+        const learnMoreButtons = document.querySelectorAll('.project-card-cta');
+        const contactSection = document.getElementById('contact');
+        const contactForm = document.querySelector('.contact-form');
+
+        learnMoreButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Add loading state to button
+                this.style.transform = 'scale(0.95)';
+                this.style.background = '#1ea854';
+                
+                // Smooth scroll to contact section
+                contactSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // Add highlight effect after scroll
+                setTimeout(() => {
+                    contactSection.classList.add('highlighted');
+                    contactForm.classList.add('visible');
+                    
+                    // Remove highlight after animation
+                    setTimeout(() => {
+                        contactSection.classList.remove('highlighted');
+                    }, 2000);
+                }, 500);
+                
+                // Reset button state
+                setTimeout(() => {
+                    this.style.transform = '';
+                    this.style.background = '';
+                }, 200);
+            });
+        });
+
+        // Show form animation on page load if already at contact section
+        function checkContactVisibility() {
+            const rect = contactSection.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+            
+            if (isVisible && !contactForm.classList.contains('visible')) {
+                contactForm.classList.add('visible');
+            }
+        }
+
+        // Check on scroll
+        window.addEventListener('scroll', checkContactVisibility);
+        
+        // Check on page load
+        checkContactVisibility();
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        if (window.lucide) {
+            lucide.createIcons();
+        } else {
+            document.addEventListener('DOMContentLoaded', function() {
+                if (window.lucide) lucide.createIcons();
+            });
+        }
     </script>
 </body>
 </html>
