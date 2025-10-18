@@ -10,41 +10,13 @@
     <meta property="og:image" content="Untitled-8.png">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="Untitled-8.png">
-    <link rel="stylesheet" href="styles.css?v=4">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Glassmorphic Top Navigation (Desktop) -->
-    <nav class="glassmorphic-nav">
-        <div class="glassmorphic-nav-container">
-            <!-- Left Section - Logo -->
-            <div class="glassmorphic-nav-logo">
-                <img src="Untitled-8.png" alt="AITA token" class="glassmorphic-nav-logo-img">
-                <span class="glassmorphic-nav-logo-text">AITA token</span>
-            </div>
-
-            <!-- Center Section - Navigation Links -->
-            <div class="glassmorphic-nav-center">
-                <ul class="glassmorphic-nav-list">
-                    <li><a href="#hero" class="glassmorphic-nav-link active" data-section="hero">Home</a></li>
-                    <li><a href="#projects" class="glassmorphic-nav-link" data-section="projects">Projects</a></li>
-                    <li><a href="#about-aita" class="glassmorphic-nav-link" data-section="about-aita">About</a></li>
-                    <li><a href="#how-it-works" class="glassmorphic-nav-link" data-section="how-it-works">How It Works</a></li>
-                    <li><a href="#benefits" class="glassmorphic-nav-link" data-section="benefits">Benefits</a></li>
-                    <li><a href="#team" class="glassmorphic-nav-link" data-section="team">Team</a></li>
-                </ul>
-            </div>
-
-            <!-- Right Section - CTA -->
-            <div class="glassmorphic-nav-right">
-                <a href="#contact" class="glassmorphic-nav-cta" data-section="contact">Join Wait List</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Side Navigation (Mobile) -->
+    <!-- Navigation -->
     <nav class="side-nav">
         <ul>
             <li><a href="#hero" class="nav-link active" data-section="hero">
@@ -407,34 +379,28 @@
             <h2>Our Founders</h2>
             <div class="team-grid">
                 <div class="team-member">
-                    <a href="https://www.linkedin.com/in/dmytro-ostapenko2025/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
-                        <div class="member-image">
-                            <img src="Dima Ostapenko.jpeg" alt="Dmytro Ostapenko" class="founder-img">
-                        </div>
-                        <h3>Dmytro Ostapenko</h3>
-                        <p class="title">CEO & Co-Founder</p>
-                        <p class="bio">Led team building and expansion in renewable energy, finance, and tech for 12 years. Managed R&D, legal, procurement, and compliance, securing key partnerships in 700+ MW projects.</p>
-                    </a>
+                    <div class="member-image">
+                        <img src="Dima Ostapenko.jpeg" alt="Dmytro Ostapenko" class="founder-img">
+                    </div>
+                    <h3>Dmytro Ostapenko</h3>
+                    <p class="title">CEO & Co-Founder</p>
+                    <p class="bio">Led team building and expansion in renewable energy, finance, and tech for 12 years. Managed R&D, legal, procurement, and compliance, securing key partnerships in 700+ MW projects.</p>
                 </div>
                 <div class="team-member">
-                    <a href="https://www.linkedin.com/in/dmytro-mekhed-369a49113/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
-                        <div class="member-image">
-                            <img src="Dima Mekhed.jpg" alt="Dmytro Mekhed" class="founder-img">
-                        </div>
-                        <h3>Dmytro Mekhed</h3>
-                        <p class="title">CTO & Co-Founder</p>
-                        <p class="bio">15+ years Software Development Experience. CTO and architect in fintech, blockchain, and AI. Led and scaling teams and IT architecture. Successfully launched projects in fintech and crypto sectors.</p>
-                    </a>
+                    <div class="member-image">
+                        <img src="Dima Mekhed.jpg" alt="Dmytro Mekhed" class="founder-img">
+                    </div>
+                    <h3>Dmytro Mekhed</h3>
+                    <p class="title">CTO & Co-Founder</p>
+                    <p class="bio">15+ years Software Development Experience. CTO and architect in fintech, blockchain, and AI. Led and scaling teams and IT architecture. Successfully launched projects in fintech and crypto sectors.</p>
                 </div>
                 <div class="team-member">
-                    <a href="https://www.linkedin.com/in/ivan-shumlianskyi-5bb90133a/" target="_blank" rel="noopener noreferrer" class="linkedin-link">
-                        <div class="member-image">
-                            <img src="Ivan.jpeg" alt="Ivan Shumlyansky" class="founder-img">
-                        </div>
-                        <h3>Ivan Shumlyansky</h3>
-                        <p class="title">COO & Co-Founder</p>
-                        <p class="bio">12+ years in management, design, and construction of renewable energy facilities. Led alternative energy and storage projects, digitalization, and cloud tech in the energy sector.</p>
-                    </a>
+                    <div class="member-image">
+                        <img src="Ivan.jpeg" alt="Ivan Shumlyansky" class="founder-img">
+                    </div>
+                    <h3>Ivan Shumlyansky</h3>
+                    <p class="title">COO & Co-Founder</p>
+                    <p class="bio">12+ years in management, design, and construction of renewable energy facilities. Led alternative energy and storage projects, digitalization, and cloud tech in the energy sector.</p>
                 </div>
             </div>
             <div class="partners">
@@ -515,7 +481,6 @@
         // Update active nav link based on scroll position
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-link');
-        const glassmorphicNavLinks = document.querySelectorAll('.glassmorphic-nav-link');
         const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
         function updateActiveNavLink() {
@@ -528,16 +493,8 @@
                 }
             });
 
-            // Update side navigation (mobile)
+            // Update desktop navigation
             navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('data-section') === current) {
-                    link.classList.add('active');
-                }
-            });
-
-            // Update glassmorphic navigation (desktop)
-            glassmorphicNavLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('data-section') === current) {
                     link.classList.add('active');
@@ -691,6 +648,6 @@
         }
     </script>
     <!-- Animated Gradient Background -->
-    <script src="gradient-background.js?v=3"></script>
+    <script src="gradient-background.js?v=6"></script>
 </body>
 </html>

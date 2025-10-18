@@ -153,14 +153,13 @@ section h2::after {
     overflow-x: hidden;
 }
 
-
 .process-flows {
     display: flex;
     flex-direction: column;
     gap: 4rem;
-    margin: 3rem 0;
+    margin: 3rem auto;
     position: relative;
-    max-width: 100%;
+    max-width: 900px;
 }
 
 .flow-group {
@@ -192,23 +191,22 @@ section h2::after {
     overflow-x: auto;
     padding: 2rem 0;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     margin-top: 0.5rem;
     counter-reset: step;
 }
 
 .flow-step {
     min-width: 180px;
-    text-align: left;
+    text-align: center;
     padding: 1rem;
     position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
     counter-increment: step;
-    justify-content: flex-start;
 }
 
 .flow-step h3 {
@@ -219,22 +217,19 @@ section h2::after {
 }
 
 .step-icon {
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
-    background: rgba(40, 199, 111, 0.25);
+    color: #4a2c7a;
+    background: rgba(40, 199, 111, 0.1);
     border: 1px solid var(--glass-border);
     border-radius: 12px;
     line-height: 0;
     flex-shrink: 0;
     position: relative;
     z-index: 2;
-    filter: brightness(1.3) contrast(1.2);
-    margin: 0;
-    padding: 0;
 }
 
 /* Simple arrows between steps */
@@ -242,7 +237,7 @@ section h2::after {
     position: relative; 
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 2rem;
 }
 
@@ -289,15 +284,11 @@ section h2::after {
 }
 
 .benefit-card {
-    text-align: left;
+    text-align: center;
     padding: 2rem;
     background: var(--glass-bg);
     border-radius: 12px;
     transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
 }
 
 .benefit-card:hover {
@@ -305,27 +296,24 @@ section h2::after {
 }
 
 .benefit-icon {
-    width: 60px;
-    height: 60px;
-    margin: 0 0 1rem 0;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
-    background: rgba(40, 199, 111, 0.25);
+    color: #4a2c7a;
+    background: rgba(40, 199, 111, 0.1);
     border: 1px solid var(--glass-border);
     border-radius: 12px;
     line-height: 0;
     flex-shrink: 0;
-    filter: brightness(1.3) contrast(1.2);
-    padding: 0;
 }
 
 .step-icon i, .step-icon svg, .benefit-icon i, .benefit-icon svg {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
     display: block;
-    margin: 0 auto;
 }
 
 /* Project Snapshot Section */
@@ -408,7 +396,7 @@ section h2::after {
 }
 
 .team-member {
-    text-align: left;
+    text-align: center;
     padding: 2.5rem;
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
@@ -426,31 +414,11 @@ section h2::after {
 .member-image {
     width: 220px;
     height: 220px;
-    margin: 0 0 2rem 0;
+    margin: 0 auto 2rem;
     position: relative;
     border-radius: 50%;
     padding: 4px;
     background: linear-gradient(135deg, var(--primary-color), transparent);
-}
-
-.linkedin-link {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.3s ease;
-    position: relative;
-    z-index: 10;
-    pointer-events: auto;
-}
-
-.linkedin-link:hover {
-    cursor: pointer;
-}
-
-.linkedin-link:active {
-    transform: scale(0.98);
 }
 
 .member-image::before {
@@ -481,15 +449,7 @@ section h2::after {
     transform: scale(1.05);
 }
 
-.linkedin-link:hover .founder-img {
-    transform: scale(1.05);
-}
-
 .team-member:hover .member-image::before {
-    opacity: 0.7;
-}
-
-.linkedin-link:hover .member-image::before {
     opacity: 0.7;
 }
 
@@ -511,8 +471,8 @@ section h2::after {
     color: var(--text-gray);
     line-height: 1.6;
     font-size: 1rem;
-    max-width: 100%;
-    margin: 0;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 .partners {
@@ -575,7 +535,6 @@ section h2::after {
     transition: all 0.3s ease;
     border: 1px solid var(--glass-border);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
 }
 
 .partner-logo .logo-container:hover {
@@ -588,7 +547,7 @@ section h2::after {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    filter: brightness(1.0) contrast(1.3);
+    filter: brightness(0.7) contrast(1.2);
     border-radius: 50%;
     transition: transform 0.3s ease;
 }
@@ -603,7 +562,7 @@ section h2::after {
 
 .partner-logo:hover img {
     transform: scale(1.05);
-    filter: brightness(1.1) contrast(1.4);
+    filter: brightness(0.8) contrast(1.3);
 }
 
 /* Placeholder for missing logos */
@@ -883,7 +842,6 @@ button:active {
         gap: 2.5rem;
         padding: 1.5rem 1rem;
     }
-    
 
     .flow-step {
         min-width: 160px;
@@ -891,13 +849,9 @@ button:active {
     }
 
     .step-icon {
-        width: 55px;
-        height: 55px;
+        width: 50px;
+        height: 50px;
         font-size: 2rem;
-        filter: brightness(1.3) contrast(1.2);
-        margin: 0;
-        padding: 0;
-        justify-content: center;
     }
 
     .flow-step h3 {
@@ -926,7 +880,7 @@ button:active {
     .member-image {
         width: 180px;
         height: 180px;
-        margin: 0 0 1.5rem 0;
+        margin-bottom: 1.5rem;
     }
 
     .team-member h3 {
@@ -1015,7 +969,6 @@ button:active {
         gap: 2rem;
         padding: 1rem;
     }
-    
 
     .flow-step {
         min-width: 140px;
@@ -1028,13 +981,9 @@ button:active {
     }
 
     .step-icon {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
         font-size: 1.8rem;
-        filter: brightness(1.3) contrast(1.2);
-        margin: 0;
-        padding: 0;
-        justify-content: center;
     }
 
     .flow-title {
@@ -1058,7 +1007,7 @@ button:active {
     .member-image {
         width: 160px;
         height: 160px;
-        margin: 0 0 1.2rem 0;
+        margin-bottom: 1.2rem;
     }
 
     .team-member h3 {
@@ -1118,7 +1067,7 @@ section {
 .logo {
     height: 40px;
     width: auto;
-    filter: brightness(1.1) contrast(1.3);
+    filter: brightness(0.7) contrast(1.2);
 }
 
 .logo-text {
@@ -1374,7 +1323,7 @@ section {
     width: 32px;
     height: 32px;
     border-radius: 6px;
-    filter: brightness(1.1) contrast(1.3);
+    filter: brightness(0.7) contrast(1.2);
 }
 
 .mobile-logo-text {
@@ -1736,7 +1685,6 @@ html {
     gap: 1rem;
     margin-bottom: 1.25rem;
     transition: transform 0.3s ease;
-    min-height: 60px;
 }
 
 .project-card:hover .project-card-header {
@@ -1744,23 +1692,20 @@ html {
 }
 
 .project-logo {
-    height: 45px;
+    height: 40px;
     width: auto;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
-    padding: 0.3rem 0.5rem;
+    padding: 0.25rem 0.4rem;
     transition: all 0.3s ease;
-    filter: brightness(1.0) contrast(1.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    filter: brightness(0.7) contrast(1.2);
 }
 
 .project-card:hover .project-logo {
     transform: scale(1.05);
     background: rgba(255, 255, 255, 1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    filter: brightness(1.1) contrast(1.4);
+    filter: brightness(0.8) contrast(1.3);
 }
 
 .project-card-details {
@@ -1790,11 +1735,9 @@ html {
 }
 
 .detail-value {
-    color: #ffffff;
+    color: var(--primary-color);
     font-weight: 700;
     font-size: 1.2rem;
-    filter: brightness(1.3) contrast(1.2);
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
 .project-card-description {
@@ -2043,199 +1986,5 @@ html {
         width: 40px;
         height: 40px;
         font-size: 16px;
-    }
-}
-
-/* Glassmorphic Top Navigation Styles (Desktop) */
-.glassmorphic-nav {
-    position: fixed;
-    top: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1002;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 2rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    display: none;
-    max-width: 1200px;
-    width: calc(100% - 2rem);
-}
-
-.glassmorphic-nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    height: 60px;
-}
-
-/* Left Section - Logo */
-.glassmorphic-nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    flex-shrink: 0;
-}
-
-.glassmorphic-nav-logo-img {
-    height: 32px;
-    width: auto;
-    filter: brightness(1.1) contrast(1.3);
-}
-
-.glassmorphic-nav-logo-text {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: 0.05em;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* Center Section - Navigation Links */
-.glassmorphic-nav-center {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.glassmorphic-nav-list {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.glassmorphic-nav-link {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
-    transition: all 0.3s ease;
-    position: relative;
-    white-space: nowrap;
-    backdrop-filter: blur(10px);
-}
-
-.glassmorphic-nav-link:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.15);
-    transform: scale(1.02);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.glassmorphic-nav-link.active {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.glassmorphic-nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -0.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 20px;
-    height: 2px;
-    background: var(--primary-color);
-    border-radius: 1px;
-}
-
-/* Right Section - CTA */
-.glassmorphic-nav-right {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.glassmorphic-nav-cta {
-    background: var(--primary-color);
-    color: #ffffff !important;
-    padding: 0.6rem 1.2rem;
-    border-radius: 1rem;
-    font-weight: 600;
-    font-size: 0.85rem;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    white-space: nowrap;
-    box-shadow: 0 4px 15px rgba(40, 199, 111, 0.3);
-    backdrop-filter: blur(10px);
-}
-
-.glassmorphic-nav-cta::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s ease;
-}
-
-.glassmorphic-nav-cta:hover {
-    background: #23b35f;
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 6px 20px rgba(40, 199, 111, 0.4);
-}
-
-.glassmorphic-nav-cta:hover::before {
-    left: 100%;
-}
-
-/* Desktop Navigation - Show glassmorphic nav, hide side nav */
-@media (min-width: 1025px) {
-    .glassmorphic-nav {
-        display: block;
-    }
-    
-    .side-nav {
-        display: none;
-    }
-    
-    .mobile-nav-toggle {
-        display: none;
-    }
-    
-    .logo-container {
-        display: none;
-    }
-    
-    /* Add padding to body to account for fixed glassmorphic nav */
-    body {
-        padding-top: 100px;
-    }
-    
-    .hero {
-        min-height: calc(100vh - 100px);
-    }
-}
-
-/* Tablet and Mobile - Hide glassmorphic nav, show side nav */
-@media (max-width: 1024px) {
-    .glassmorphic-nav {
-        display: none;
-    }
-    
-    .side-nav {
-        display: block;
-    }
-    
-    .mobile-nav-toggle {
-        display: block;
-    }
-    
-    .logo-container {
-        display: flex;
     }
 }

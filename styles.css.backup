@@ -1,6 +1,6 @@
 /* Base Styles */
 :root {
-    --primary-color: #8b5cf6;
+    --primary-color: #28c76f;
     --bg-dark: #1a1a1a;
     --bg-darker: #2a2a2a;
     --text-light: #ffffff;
@@ -21,12 +21,6 @@ body {
     background: linear-gradient(135deg, var(--bg-dark), var(--bg-darker));
     color: var(--text-light);
     line-height: 1.6;
-    position: relative;
-}
-
-/* Gradient background will be added by JavaScript */
-body.gradient-active {
-    background: var(--bg-dark);
 }
 
 h1, h2, h3 {
@@ -53,8 +47,6 @@ section {
     position: relative;
     padding: var(--section-spacing) 0;
     animation: fadeIn 0.6s ease-out;
-    background: rgba(26, 26, 26, 0.3);
-    backdrop-filter: blur(1px);
 }
 
 section:not(:first-child)::before {
@@ -122,7 +114,7 @@ section h2::after {
     width: 600px;
     height: 600px;
     opacity: 0.15;
-    filter: brightness(0.8) contrast(1.4) blur(0.5px);
+    filter: brightness(1.2) contrast(1.2) blur(0.5px);
     object-fit: contain;
 }
 
@@ -153,14 +145,13 @@ section h2::after {
     overflow-x: hidden;
 }
 
-
 .process-flows {
     display: flex;
     flex-direction: column;
     gap: 4rem;
-    margin: 3rem 0;
+    margin: 3rem auto;
     position: relative;
-    max-width: 100%;
+    max-width: 900px;
 }
 
 .flow-group {
@@ -192,23 +183,22 @@ section h2::after {
     overflow-x: auto;
     padding: 2rem 0;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     margin-top: 0.5rem;
     counter-reset: step;
 }
 
 .flow-step {
     min-width: 180px;
-    text-align: left;
+    text-align: center;
     padding: 1rem;
     position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
     counter-increment: step;
-    justify-content: flex-start;
 }
 
 .flow-step h3 {
@@ -219,22 +209,19 @@ section h2::after {
 }
 
 .step-icon {
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
-    background: rgba(40, 199, 111, 0.25);
+    color: var(--primary-color);
+    background: rgba(40, 199, 111, 0.1);
     border: 1px solid var(--glass-border);
     border-radius: 12px;
     line-height: 0;
     flex-shrink: 0;
     position: relative;
     z-index: 2;
-    filter: brightness(1.3) contrast(1.2);
-    margin: 0;
-    padding: 0;
 }
 
 /* Simple arrows between steps */
@@ -242,7 +229,7 @@ section h2::after {
     position: relative; 
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 2rem;
 }
 
@@ -289,15 +276,11 @@ section h2::after {
 }
 
 .benefit-card {
-    text-align: left;
+    text-align: center;
     padding: 2rem;
     background: var(--glass-bg);
     border-radius: 12px;
     transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
 }
 
 .benefit-card:hover {
@@ -305,27 +288,24 @@ section h2::after {
 }
 
 .benefit-icon {
-    width: 60px;
-    height: 60px;
-    margin: 0 0 1rem 0;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
-    background: rgba(40, 199, 111, 0.25);
+    color: var(--primary-color);
+    background: rgba(40, 199, 111, 0.1);
     border: 1px solid var(--glass-border);
     border-radius: 12px;
     line-height: 0;
     flex-shrink: 0;
-    filter: brightness(1.3) contrast(1.2);
-    padding: 0;
 }
 
 .step-icon i, .step-icon svg, .benefit-icon i, .benefit-icon svg {
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
     display: block;
-    margin: 0 auto;
 }
 
 /* Project Snapshot Section */
@@ -408,7 +388,7 @@ section h2::after {
 }
 
 .team-member {
-    text-align: left;
+    text-align: center;
     padding: 2.5rem;
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
@@ -426,31 +406,11 @@ section h2::after {
 .member-image {
     width: 220px;
     height: 220px;
-    margin: 0 0 2rem 0;
+    margin: 0 auto 2rem;
     position: relative;
     border-radius: 50%;
     padding: 4px;
     background: linear-gradient(135deg, var(--primary-color), transparent);
-}
-
-.linkedin-link {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.3s ease;
-    position: relative;
-    z-index: 10;
-    pointer-events: auto;
-}
-
-.linkedin-link:hover {
-    cursor: pointer;
-}
-
-.linkedin-link:active {
-    transform: scale(0.98);
 }
 
 .member-image::before {
@@ -481,15 +441,7 @@ section h2::after {
     transform: scale(1.05);
 }
 
-.linkedin-link:hover .founder-img {
-    transform: scale(1.05);
-}
-
 .team-member:hover .member-image::before {
-    opacity: 0.7;
-}
-
-.linkedin-link:hover .member-image::before {
     opacity: 0.7;
 }
 
@@ -511,8 +463,8 @@ section h2::after {
     color: var(--text-gray);
     line-height: 1.6;
     font-size: 1rem;
-    max-width: 100%;
-    margin: 0;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 .partners {
@@ -575,7 +527,6 @@ section h2::after {
     transition: all 0.3s ease;
     border: 1px solid var(--glass-border);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
 }
 
 .partner-logo .logo-container:hover {
@@ -588,7 +539,7 @@ section h2::after {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    filter: brightness(1.0) contrast(1.3);
+    filter: none;
     border-radius: 50%;
     transition: transform 0.3s ease;
 }
@@ -603,7 +554,6 @@ section h2::after {
 
 .partner-logo:hover img {
     transform: scale(1.05);
-    filter: brightness(1.1) contrast(1.4);
 }
 
 /* Placeholder for missing logos */
@@ -875,7 +825,6 @@ button:active {
         width: 400px;
         height: 400px;
         opacity: 0.12;
-        filter: brightness(0.8) contrast(1.4) blur(0.5px);
     }
 
     .flow {
@@ -883,7 +832,6 @@ button:active {
         gap: 2.5rem;
         padding: 1.5rem 1rem;
     }
-    
 
     .flow-step {
         min-width: 160px;
@@ -891,13 +839,9 @@ button:active {
     }
 
     .step-icon {
-        width: 55px;
-        height: 55px;
+        width: 50px;
+        height: 50px;
         font-size: 2rem;
-        filter: brightness(1.3) contrast(1.2);
-        margin: 0;
-        padding: 0;
-        justify-content: center;
     }
 
     .flow-step h3 {
@@ -926,7 +870,7 @@ button:active {
     .member-image {
         width: 180px;
         height: 180px;
-        margin: 0 0 1.5rem 0;
+        margin-bottom: 1.5rem;
     }
 
     .team-member h3 {
@@ -990,7 +934,6 @@ button:active {
         width: 350px;
         height: 350px;
         opacity: 0.1;
-        filter: brightness(0.8) contrast(1.4) blur(0.5px);
     }
 
     .partner-logos {
@@ -1015,7 +958,6 @@ button:active {
         gap: 2rem;
         padding: 1rem;
     }
-    
 
     .flow-step {
         min-width: 140px;
@@ -1028,13 +970,9 @@ button:active {
     }
 
     .step-icon {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
         font-size: 1.8rem;
-        filter: brightness(1.3) contrast(1.2);
-        margin: 0;
-        padding: 0;
-        justify-content: center;
     }
 
     .flow-title {
@@ -1058,7 +996,7 @@ button:active {
     .member-image {
         width: 160px;
         height: 160px;
-        margin: 0 0 1.2rem 0;
+        margin-bottom: 1.2rem;
     }
 
     .team-member h3 {
@@ -1103,29 +1041,24 @@ section {
     position: fixed;
     top: 2rem;
     left: 2rem;
-    z-index: 1002;
+    z-index: 1000;
     display: flex;
     align-items: center;
-    gap: 0.8rem;
-    background: var(--glass-bg);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
-    border-radius: 12px;
-    padding: 0.8rem 1.2rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    gap: 1rem;
 }
 
 .logo {
-    height: 40px;
+    height: 70px;
     width: auto;
-    filter: brightness(1.1) contrast(1.3);
+    filter: brightness(0) invert(1);
 }
 
 .logo-text {
     font-family: 'Montserrat', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    color: var(--text-light);
+    color: #ffffff;
+    text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
@@ -1133,23 +1066,14 @@ section {
 .side-nav {
     position: fixed;
     right: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1001;
+    bottom: 2rem;
+    z-index: 1000;
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
     border-radius: 16px;
     padding: 1rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
-}
-
-.side-nav:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-    transform: translateY(-50%) scale(1.02);
 }
 
 .side-nav ul {
@@ -1227,8 +1151,7 @@ section {
 @media (max-width: 768px) {
     .side-nav {
         right: 1.5rem;
-        top: 50%;
-        transform: translateY(-50%);
+        bottom: 1.5rem;
         padding: 0.8rem;
     }
 
@@ -1250,8 +1173,7 @@ section {
 @media (max-width: 480px) {
     .side-nav {
         right: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
+        bottom: 1rem;
         padding: 0.6rem;
     }
 
@@ -1270,12 +1192,39 @@ section {
     }
 }
 
+/* Logo Styles */
+.logo-container {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 0.8rem 1.2rem;
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+.logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+}
 
 @media (max-width: 768px) {
     .side-nav {
         right: 1.5rem;
-        top: 50%;
-        transform: translateY(-50%);
+        bottom: 1.5rem;
     }
 
     .logo-container {
@@ -1299,7 +1248,7 @@ section {
     position: fixed;
     top: 1.5rem;
     right: 1.5rem;
-    z-index: 1002;
+    z-index: 1001;
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
@@ -1345,7 +1294,7 @@ section {
     background: var(--bg-dark);
     backdrop-filter: blur(20px);
     border-left: 1px solid var(--glass-border);
-    z-index: 1001;
+    z-index: 1000;
     transition: right 0.3s ease;
     overflow-y: auto;
 }
@@ -1374,7 +1323,6 @@ section {
     width: 32px;
     height: 32px;
     border-radius: 6px;
-    filter: brightness(1.1) contrast(1.3);
 }
 
 .mobile-logo-text {
@@ -1421,7 +1369,7 @@ section {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
-    z-index: 1000;
+    z-index: 999;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
@@ -1573,26 +1521,6 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Gradient Background Fallback */
-.gradient-fallback {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a1a3a 25%, #8524d8 50%, #1f1f1f 100%);
-    background-size: 400% 400%;
-    animation: gradientShift 12s ease infinite;
-    opacity: 0.8;
-}
-
-@keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
 
 /* About AITA Section */
 .about-aita {
@@ -1736,7 +1664,6 @@ html {
     gap: 1rem;
     margin-bottom: 1.25rem;
     transition: transform 0.3s ease;
-    min-height: 60px;
 }
 
 .project-card:hover .project-card-header {
@@ -1744,23 +1671,18 @@ html {
 }
 
 .project-logo {
-    height: 45px;
+    height: 40px;
     width: auto;
     background: rgba(255, 255, 255, 0.9);
     border-radius: 8px;
-    padding: 0.3rem 0.5rem;
+    padding: 0.25rem 0.4rem;
     transition: all 0.3s ease;
-    filter: brightness(1.0) contrast(1.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .project-card:hover .project-logo {
     transform: scale(1.05);
     background: rgba(255, 255, 255, 1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    filter: brightness(1.1) contrast(1.4);
 }
 
 .project-card-details {
@@ -1790,11 +1712,9 @@ html {
 }
 
 .detail-value {
-    color: #ffffff;
+    color: var(--primary-color);
     font-weight: 700;
     font-size: 1.2rem;
-    filter: brightness(1.3) contrast(1.2);
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
 .project-card-description {
@@ -1984,7 +1904,7 @@ html {
     border-radius: 50%;
     color: var(--text-light);
     cursor: pointer;
-    z-index: 1001;
+    z-index: 1000;
     display: none;
     align-items: center;
     justify-content: center;
@@ -2043,199 +1963,5 @@ html {
         width: 40px;
         height: 40px;
         font-size: 16px;
-    }
-}
-
-/* Glassmorphic Top Navigation Styles (Desktop) */
-.glassmorphic-nav {
-    position: fixed;
-    top: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1002;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 2rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    display: none;
-    max-width: 1200px;
-    width: calc(100% - 2rem);
-}
-
-.glassmorphic-nav-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 2rem;
-    height: 60px;
-}
-
-/* Left Section - Logo */
-.glassmorphic-nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    flex-shrink: 0;
-}
-
-.glassmorphic-nav-logo-img {
-    height: 32px;
-    width: auto;
-    filter: brightness(1.1) contrast(1.3);
-}
-
-.glassmorphic-nav-logo-text {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: 0.05em;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-/* Center Section - Navigation Links */
-.glassmorphic-nav-center {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.glassmorphic-nav-list {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.glassmorphic-nav-link {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
-    transition: all 0.3s ease;
-    position: relative;
-    white-space: nowrap;
-    backdrop-filter: blur(10px);
-}
-
-.glassmorphic-nav-link:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.15);
-    transform: scale(1.02);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.glassmorphic-nav-link.active {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.glassmorphic-nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -0.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 20px;
-    height: 2px;
-    background: var(--primary-color);
-    border-radius: 1px;
-}
-
-/* Right Section - CTA */
-.glassmorphic-nav-right {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-}
-
-.glassmorphic-nav-cta {
-    background: var(--primary-color);
-    color: #ffffff !important;
-    padding: 0.6rem 1.2rem;
-    border-radius: 1rem;
-    font-weight: 600;
-    font-size: 0.85rem;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    white-space: nowrap;
-    box-shadow: 0 4px 15px rgba(40, 199, 111, 0.3);
-    backdrop-filter: blur(10px);
-}
-
-.glassmorphic-nav-cta::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s ease;
-}
-
-.glassmorphic-nav-cta:hover {
-    background: #23b35f;
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 6px 20px rgba(40, 199, 111, 0.4);
-}
-
-.glassmorphic-nav-cta:hover::before {
-    left: 100%;
-}
-
-/* Desktop Navigation - Show glassmorphic nav, hide side nav */
-@media (min-width: 1025px) {
-    .glassmorphic-nav {
-        display: block;
-    }
-    
-    .side-nav {
-        display: none;
-    }
-    
-    .mobile-nav-toggle {
-        display: none;
-    }
-    
-    .logo-container {
-        display: none;
-    }
-    
-    /* Add padding to body to account for fixed glassmorphic nav */
-    body {
-        padding-top: 100px;
-    }
-    
-    .hero {
-        min-height: calc(100vh - 100px);
-    }
-}
-
-/* Tablet and Mobile - Hide glassmorphic nav, show side nav */
-@media (max-width: 1024px) {
-    .glassmorphic-nav {
-        display: none;
-    }
-    
-    .side-nav {
-        display: block;
-    }
-    
-    .mobile-nav-toggle {
-        display: block;
-    }
-    
-    .logo-container {
-        display: flex;
     }
 }
