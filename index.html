@@ -16,107 +16,61 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Glassmorphic Top Navigation (Desktop) -->
-    <nav class="glassmorphic-nav">
-        <div class="glassmorphic-nav-container">
+    <!-- Top Navigation -->
+    <nav class="top-nav">
+        <div class="top-nav-container">
             <!-- Left Section - Logo -->
-            <div class="glassmorphic-nav-logo">
-                <img src="Untitled-8.png" alt="AITA token" class="glassmorphic-nav-logo-img">
-                <span class="glassmorphic-nav-logo-text">AITA token</span>
+            <div class="top-nav-logo">
+                <img src="Untitled-8.png" alt="AITA token" class="top-nav-logo-img">
+                <span class="top-nav-logo-text">AITA token</span>
             </div>
 
-            <!-- Center Section - Navigation Links -->
-            <div class="glassmorphic-nav-center">
-                <ul class="glassmorphic-nav-list">
-                    <li><a href="#hero" class="glassmorphic-nav-link active" data-section="hero">Home</a></li>
-                    <li><a href="#projects" class="glassmorphic-nav-link" data-section="projects">Projects</a></li>
-                    <li><a href="#about-aita" class="glassmorphic-nav-link" data-section="about-aita">About</a></li>
-                    <li><a href="#how-it-works" class="glassmorphic-nav-link" data-section="how-it-works">How It Works</a></li>
-                    <li><a href="#benefits" class="glassmorphic-nav-link" data-section="benefits">Benefits</a></li>
-                    <li><a href="#team" class="glassmorphic-nav-link" data-section="team">Team</a></li>
+            <!-- Center Section - Navigation Links (Desktop) -->
+            <div class="top-nav-center">
+                <ul class="top-nav-list">
+                    <li><a href="#hero" class="top-nav-link active" data-section="hero">Home</a></li>
+                    <li><a href="#projects" class="top-nav-link" data-section="projects">Projects</a></li>
+                    <li><a href="#about-aita" class="top-nav-link" data-section="about-aita">About</a></li>
+                    <li><a href="#how-it-works" class="top-nav-link" data-section="how-it-works">How It Works</a></li>
+                    <li><a href="#benefits" class="top-nav-link" data-section="benefits">Benefits</a></li>
+                    <li><a href="#team" class="top-nav-link" data-section="team">Team</a></li>
                 </ul>
             </div>
 
-            <!-- Right Section - CTA -->
-            <div class="glassmorphic-nav-right">
-                <a href="#contact" class="glassmorphic-nav-cta" data-section="contact">Join Wait List</a>
+            <!-- Right Section - CTA & Mobile Menu Toggle -->
+            <div class="top-nav-right">
+                <a href="#contact" class="top-nav-cta" data-section="contact">Join Wait List</a>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
         </div>
-    </nav>
 
-    <!-- Side Navigation (Mobile) -->
-    <nav class="side-nav">
-        <ul>
-            <li><a href="#hero" class="nav-link active" data-section="hero">
-                <span class="nav-dot"></span>
-                <span class="nav-label">Home</span>
-            </a></li>
-            <li><a href="#projects" class="nav-link" data-section="projects">
-                <span class="nav-dot"></span>
-                <span class="nav-label">Projects</span>
-            </a></li>
-            <li><a href="#about-aita" class="nav-link" data-section="about-aita">
-                <span class="nav-dot"></span>
-                <span class="nav-label">About</span>
-            </a></li>
-            <li><a href="#how-it-works" class="nav-link" data-section="how-it-works">
-                <span class="nav-dot"></span>
-                <span class="nav-label">How It Works</span>
-            </a></li>
-            <li><a href="#benefits" class="nav-link" data-section="benefits">
-                <span class="nav-dot"></span>
-                <span class="nav-label">Benefits</span>
-            </a></li>
-            <li><a href="#team" class="nav-link" data-section="team">
-                <span class="nav-dot"></span>
-                <span class="nav-label">Team</span>
-            </a></li>
-            <li><a href="#contact" class="nav-link" data-section="contact">
-                <span class="nav-dot"></span>
-                <span class="nav-label">Join Wait List</span>
-            </a></li>
-</ul>
-    </nav>
-
-    <!-- Mobile Navigation Toggle -->
-    <button class="mobile-nav-toggle" aria-label="Toggle navigation">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-    </button>
-
-    <!-- Mobile Navigation Menu -->
-    <nav class="mobile-nav" id="mobile-nav">
-        <div class="mobile-nav-content">
-            <div class="mobile-nav-header">
-                <img src="Untitled-8.png" alt="AITA token" class="mobile-logo">
-                <span class="mobile-logo-text">AITA token</span>
-            </div>
-            <ul class="mobile-nav-list">
-                <li><a href="#hero" class="mobile-nav-link" data-section="hero">Home</a></li>
-                <li><a href="#projects" class="mobile-nav-link" data-section="projects">Projects</a></li>
-                <li><a href="#about-aita" class="mobile-nav-link" data-section="about-aita">About</a></li>
-                <li><a href="#how-it-works" class="mobile-nav-link" data-section="how-it-works">How It Works</a></li>
-                <li><a href="#benefits" class="mobile-nav-link" data-section="benefits">Benefits</a></li>
-                <li><a href="#team" class="mobile-nav-link" data-section="team">Team</a></li>
-                <li><a href="#contact" class="mobile-nav-link" data-section="contact">Join Wait List</a></li>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <ul class="mobile-menu-list">
+                <li><a href="#hero" class="mobile-menu-link active" data-section="hero">Home</a></li>
+                <li><a href="#projects" class="mobile-menu-link" data-section="projects">Projects</a></li>
+                <li><a href="#about-aita" class="mobile-menu-link" data-section="about-aita">About</a></li>
+                <li><a href="#how-it-works" class="mobile-menu-link" data-section="how-it-works">How It Works</a></li>
+                <li><a href="#benefits" class="mobile-menu-link" data-section="benefits">Benefits</a></li>
+                <li><a href="#team" class="mobile-menu-link" data-section="team">Team</a></li>
+                <li><a href="#contact" class="mobile-menu-link" data-section="contact">Join Wait List</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Mobile Navigation Overlay -->
-    <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+
+
+
 
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
         ↑
     </button>
 
-    <!-- Logo -->
-    <div class="logo-container">
-        <img src="Untitled-8.png" alt="AITA token" class="logo">
-        <span class="logo-text">AITA token</span>
-    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
@@ -514,9 +468,8 @@
     <script>
         // Update active nav link based on scroll position
         const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const glassmorphicNavLinks = document.querySelectorAll('.glassmorphic-nav-link');
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        const topNavLinks = document.querySelectorAll('.top-nav-link');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
 
         function updateActiveNavLink() {
             let current = '';
@@ -528,24 +481,16 @@
                 }
             });
 
-            // Update side navigation (mobile)
-            navLinks.forEach(link => {
+            // Update top navigation (desktop)
+            topNavLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('data-section') === current) {
                     link.classList.add('active');
                 }
             });
 
-            // Update glassmorphic navigation (desktop)
-            glassmorphicNavLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('data-section') === current) {
-                    link.classList.add('active');
-                }
-            });
-
-            // Update mobile navigation
-            mobileNavLinks.forEach(link => {
+            // Update mobile menu navigation
+            mobileMenuLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('data-section') === current) {
                     link.classList.add('active');
@@ -555,52 +500,49 @@
 
         window.addEventListener('scroll', updateActiveNavLink);
 
-        // Mobile Navigation Toggle
-        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-        const mobileNav = document.querySelector('.mobile-nav');
-        const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
 
-        function toggleMobileNav() {
-            mobileNavToggle.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-            mobileNavOverlay.classList.toggle('active');
-            document.body.classList.toggle('nav-open');
+        function toggleMobileMenu() {
+            mobileMenuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
         }
 
-        function closeMobileNav() {
-            mobileNavToggle.classList.remove('active');
-            mobileNav.classList.remove('active');
-            mobileNavOverlay.classList.remove('active');
-            document.body.classList.remove('nav-open');
+        function closeMobileMenu() {
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
         }
 
-        // Event listeners for mobile navigation
-        mobileNavToggle.addEventListener('click', toggleMobileNav);
-        mobileNavOverlay.addEventListener('click', closeMobileNav);
+        // Event listeners for mobile menu
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
 
-        // Close mobile nav when clicking on a link
-        mobileNavLinks.forEach(link => {
+        // Close mobile menu when clicking on a link
+        mobileMenuLinks.forEach(link => {
             link.addEventListener('click', () => {
-                closeMobileNav();
+                closeMobileMenu();
             });
         });
 
-        // Close mobile nav on escape key
+        // Close mobile menu on escape key
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
-                closeMobileNav();
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMobileMenu();
             }
         });
 
-        // Prevent body scroll when mobile nav is open
+        // Prevent body scroll when mobile menu is open
         document.body.style.overflow = 'auto';
         const style = document.createElement('style');
         style.textContent = `
-            body.nav-open {
+            body.menu-open {
                 overflow: hidden;
             }
         `;
         document.head.appendChild(style);
+
 
         // Scroll to Top Button functionality
         const scrollToTopButton = document.getElementById('scroll-to-top');
