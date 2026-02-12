@@ -477,6 +477,15 @@ section h2::after {
     z-index: 2;
 }
 
+/* Вирівнювання голів на фото */
+.founder-dmytro {
+    object-position: center 35%;
+}
+
+.founder-ivan {
+    object-position: center 40%;
+}
+
 .team-member:hover .founder-img {
     transform: scale(1.05);
 }
